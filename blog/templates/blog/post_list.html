@@ -12,19 +12,13 @@
         <h1><a href="/">El blog de Daniel</a></h1>
     </header>
 
+    {% for post in posts %}
     <article>
-        <time>Published: 01.08.2024, 19:20</time>
-        <h2><a href="">My first post!</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolorum placeat quidem laboriosam ducimus labore
-            impedit veritatis ab illo vitae.</p>
+        <time>Published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </article>
-
-    <article>
-        <time>Published: 06.08.2024, 20:10</time>
-        <h2><a href="">My second post!</a></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolorum placeat quidem laboriosam ducimus labore
-            impedit veritatis ab illo vitae.</p>
-    </article>
+    {% endfor %}
 </body>
 
 </html>
